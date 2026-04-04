@@ -19,12 +19,16 @@ $stmt = $pdo->query($sql);
             <th>ID</th>
             <th>Nom</th>
             <th>Email</th>
+            <th>Action</th>
         </tr>
         <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
         <tr>
             <td><?= $row["id"] ?></td>
             <td><?= $row["nom"] ?></td>
             <td><?= $row["email"] ?></td>
+            <td>
+                <a href="supprimer.php?id=<?= $row["id"] ?>" onclick="return confirm ('Vraiment supprimer ?')"> Supprimer</a>
+            </td>
         </tr>
 
         <?php endwhile; ?>
