@@ -20,15 +20,15 @@ $stmt = $pdo->query($sql);
             <th>Nom</th>
             <th>Email</th>
         </tr>
+        <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
+        <tr>
+            <td><?= $row["id"] ?></td>
+            <td><?= $row["nom"] ?></td>
+            <td><?= $row["email"] ?></td>
+        </tr>
+
+        <?php endwhile; ?>
     </table>
 </body>
 </html>
 
-<?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
-<tr>
-    <td><?= $row["id"] ?></td>
-    <td><?= $row["nom"] ?></td>
-    <td><?= $row["email"] ?></td>
-</tr>
-
-<?php endwhile; ?>
