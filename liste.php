@@ -27,6 +27,7 @@ $stmt = $pdo->query($sql);
             <td><?= $row["nom"] ?></td>
             <td><?= $row["email"] ?></td>
             <td>
+                <a href="modifier.php?id=<?= $row['id'] ?>">Modifier</a> |
                 <a href="supprimer.php?id=<?= $row["id"] ?>" onclick="return confirm ('Vraiment supprimer ?')"> Supprimer</a>
             </td>
         </tr>
